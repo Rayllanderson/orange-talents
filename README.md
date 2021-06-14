@@ -29,3 +29,6 @@ Para que você se sinta e, realmente seja capaz de construir API's, você vai es
 ### Cronograma para executar todas as atividades
 
 ![image](https://user-images.githubusercontent.com/63964369/121933508-8dfeda80-cd1c-11eb-95a7-d486485a30fa.png)
+
+## [FASE 1](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%201)
+Queremos que você entenda a estrutura do programa e como ficar melhor preparadx para consumir tudo que preparamos. Essa aqui é uma fase curta, porém fundamental!
