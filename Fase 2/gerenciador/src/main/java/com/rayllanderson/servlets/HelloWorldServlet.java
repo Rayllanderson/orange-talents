@@ -27,3 +27,4 @@ public class HelloWorldServlet extends HttpServlet{
 		System.out.println("Entrou na servlet HelloWorldServlet!");
 	}
 }
+ 
