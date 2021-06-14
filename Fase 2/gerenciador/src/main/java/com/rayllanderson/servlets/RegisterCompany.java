@@ -25,9 +25,12 @@ public class RegisterCompany extends HttpServlet {
 		String companyName = request.getParameter("company-name");
 		Company companyToBeRegistered = new Company(null, companyName);
 		service.register(companyToBeRegistered);
-		out.println("<html> <body>");
-		out.println("Empresa " + companyName + " cadastrada com sucesso!");
-		out.println("</body> </html>");
+		var html = new StringBuilder();
+		html.append("<html> <body>");
+		html.append("Empresa " + companyName + " cadastrada com sucesso!");
+		html.append("</br>");
+		html.append("</body> </html>");
+		out.println(html.toString());
 	}
 	
 	@Override
@@ -38,5 +41,4 @@ public class RegisterCompany extends HttpServlet {
 		out.println("</body> </html>");
 	}
 	
-
 }
