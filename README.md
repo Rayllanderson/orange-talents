@@ -1,4 +1,4 @@
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/483b1949-69da-4582-8bf6-63919a8a3018/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/483b1949-69da-4582-8bf6-63919a8a3018/Untitled.png)
+![image](https://user-images.githubusercontent.com/63964369/121933482-82abaf00-cd1c-11eb-9484-5b1e1081ddef.png)
 
 ### Orange Talents: um programa de aceleração de carreira e evolução exponencial em tecnologia.
 
@@ -28,4 +28,4 @@ Para que você se sinta e, realmente seja capaz de construir API's, você vai es
 
 ### Cronograma para executar todas as atividades
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54a40116-4490-46d0-aea6-20694a78193c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/54a40116-4490-46d0-aea6-20694a78193c/Untitled.png)
+![image](https://user-images.githubusercontent.com/63964369/121933508-8dfeda80-cd1c-11eb-95a7-d486485a30fa.png)
