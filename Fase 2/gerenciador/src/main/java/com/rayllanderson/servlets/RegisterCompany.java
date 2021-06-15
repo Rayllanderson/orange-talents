@@ -21,16 +21,13 @@ public class RegisterCompany extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
 		String companyName = request.getParameter("company-name");
 		Company companyToBeRegistered = new Company(null, companyName);
 		service.register(companyToBeRegistered);
-		var html = new StringBuilder();
-		html.append("<html> <body>");
-		html.append("Empresa " + companyName + " cadastrada com sucesso!");
-		html.append("</br>");
-		html.append("</body> </html>");
-		out.println(html.toString());
+		
+		//chamar o jsp;
+		request.setAttribute("companyName", companyToBeRegistered.getName());
+		request.getRequestDispatcher("/newCompanyCreated.jsp").forward(request, response);
 	}
 	
 	@Override
