@@ -9,6 +9,16 @@
 </head>
 <body>
 
+	<c:if test="${not empty companyName}">
+		 Empresa ${companyName} cadastrada com sucesso!
+	 </c:if>
+	 
+	 <c:if test="${empty companyName}">
+		 Nenhuma empresa cadastrada
+	 </c:if>
+	 
+	 <br/>
+
 	<h3>Empresas cadastradas: </h3>
 	<table> 
 		<tr>

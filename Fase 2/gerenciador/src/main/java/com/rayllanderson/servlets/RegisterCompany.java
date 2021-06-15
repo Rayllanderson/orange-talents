@@ -27,7 +27,7 @@ public class RegisterCompany extends HttpServlet {
 		
 		//chamar o jsp;
 		request.setAttribute("companyName", companyToBeRegistered.getName());
-		request.getRequestDispatcher("/newCompanyCreated.jsp").forward(request, response);
+		request.getRequestDispatcher("/list-companies").forward(request, response);
 	}
 	
 	@Override

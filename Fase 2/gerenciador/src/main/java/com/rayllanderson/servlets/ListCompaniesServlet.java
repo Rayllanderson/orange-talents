@@ -16,7 +16,7 @@ public class ListCompaniesServlet extends HttpServlet {
 
 	private CompanyService service = new CompanyService();
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("companies", service.findAll());
 		request.getRequestDispatcher("/list-companies.jsp").forward(request, response);
 	}
