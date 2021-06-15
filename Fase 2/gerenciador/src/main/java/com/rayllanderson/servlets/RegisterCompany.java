@@ -25,11 +25,12 @@ public class RegisterCompany extends HttpServlet {
 		Company companyToBeRegistered = new Company(null, companyName);
 		service.register(companyToBeRegistered);
 		
-		response.sendRedirect("list-companies"); //Redirecionamento pelo client side
+		request.setAttribute("companyName", companyToBeRegistered.getName());
+		
+		//Redirecionamento pelo client side
+		response.sendRedirect("list-companies"); 
 		
 		//Redirecionamento pela servlet
-		//chamar o jsp;
-//		request.setAttribute("companyName", companyToBeRegistered.getName());
 //		request.getRequestDispatcher("/list-companies").forward(request, response);
 	}
 	

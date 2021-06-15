@@ -9,15 +9,17 @@
 </head>
 <body>
 
-	<c:if test="${not empty companyName}">
-		 Empresa ${companyName} cadastrada com sucesso!
-	 </c:if>
+<%-- 	<c:if test="${not empty companyName}"> --%>
+<%-- 		 Empresa ${companyName} cadastrada com sucesso! --%>
+<%-- 	 </c:if> --%>
 	 
-	 <c:if test="${empty companyName}">
-		 Nenhuma empresa cadastrada
-	 </c:if>
+<%-- 	 <c:if test="${empty companyName}"> --%>
+<!-- 		 Nenhuma empresa cadastrada -->
+<%-- 	 </c:if> --%>
 	 
 	 <br/>
+	 
+	 <a href="/gerenciador/form-register-company.jsp">Cadastrar Nova empresa</a>
 
 	<h3>Empresas cadastradas: </h3>
 	<table> 
@@ -28,6 +30,7 @@
 			
 			 <tr>
 			 	<td>${company.name}</td>
+			 	<td><a href="/gerenciador/remove-company?id=${company.id}">Remover</a></td>
 			 </tr>
 		</c:forEach>
 	</table>
