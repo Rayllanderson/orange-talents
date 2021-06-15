@@ -30,6 +30,7 @@
 			
 			 <tr>
 			 	<td>${company.name}</td>
+			 	<td><a href="/gerenciador/edit-company?id=${company.id}">Editar</a></td>
 			 	<td><a href="/gerenciador/remove-company?id=${company.id}">Remover</a></td>
 			 </tr>
 		</c:forEach>

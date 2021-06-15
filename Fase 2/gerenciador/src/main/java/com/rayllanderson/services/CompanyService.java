@@ -20,12 +20,20 @@ public class CompanyService {
 		companies.add(company);
 	}
 	
+	public void edit (Company company) {
+		companies.stream().filter(x -> x.getId() == company.getId()).forEach(x -> x.setName(company.getName()));
+	}
+	
 	public void deleteById (int id) {
 		companies.removeIf(x -> x.getId() == id);
 	}
 	
 	public List<Company> findAll() {
 		return companies;
+	}
+	
+	public Company findById(int id) {
+		return companies.stream().filter(x -> x.getId() == id).findFirst().orElseThrow(() -> new IllegalArgumentException("Objeto não encontrado"));
 	}
 
 }
