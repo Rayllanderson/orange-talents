@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:url value="/register-company" var="servletUrl"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,8 @@
 </head>
 <body>
 
-	<form action="/gerenciador/register-company" method="post">
+
+	<form action="${servletUrl}" method="post">
 		<label for="companyName">Nome da empresa</label>
 		<input type="text" name="company-name" id="companyName"/>
 		<button>Cadastrar</button>
