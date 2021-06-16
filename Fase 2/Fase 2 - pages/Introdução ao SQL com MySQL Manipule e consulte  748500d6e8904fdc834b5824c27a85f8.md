@@ -152,3 +152,69 @@ onde a cidade é Rio ou o bairro é Jardins
 SELECT * FROM tbcliente WHERE (IDADE >= 18 AND IDADE <= 22 AND SEXO = 'M')
  OR (cidade = 'Rio de Janeiro' OR BAIRRO = 'Jardins');
 ```
+
+### Atividade proposta
+
+Somos muitos alunos e alunas aqui no Bootcamp. Em função de todas as avaliações respondidas, muitos dados são gerados. E agora temos alguns desafios para você:
+
+Dado que todo(a) aluno(a) tem um email(máximo de 30 caracteres),nome(máximo de 30 caracteres) e idade(entre 1 e 100). O que você faria para representar essa estrutura no banco?
+
+- O que você precisa fazer agora para inserir novos(as) alunos(as) nessa tabela?
+- E para listar tudo que está registrado?
+- E para apagar um registro pelo email?
+- Agora você precisa buscar todos os(as) alunos(as) que tem Zup no email. Como você faria?
+- E para fechar é necessário que alunos e alunas sejam listados pela sua idade em ordem crescente.
+
+### Minha resposta: 
+
+1. Criar a base de dados do Bootcamp para que possamos organizar e agrupar nossas tabelas. Comando sql: `CREATE DATABASE Bootcamp;`
+2. Criar a tabela alunos: 
+
+    ```sql
+    CREATE TABLE `alunos` (
+      `id` bigint NOT NULL,
+      `email` varchar(30) DEFAULT NULL,
+      `nome` varchar(30) DEFAULT NULL,
+      `idade` tinyint DEFAULT NULL,
+      PRIMARY KEY (`id`)
+    );
+    ```
+
+    Para a criação da tabela, criaria, também, uma chave primária para cada aluno ter seu identificador. Para garantir que o nome e email tenham 30 caracteres, usaria `varchar(30)` e para idade, usaria um `tinyint`, que é o menor tipo de inteiro;
+
+3. Para inserção dos alunos na tabela, usaria o seguinte SQL de inserção. Aqui está um exemplo:
+
+    ```sql
+    INSERT INTO `alunos` (`id`, `email`, `nome`, `idade`)
+    VALUES (1, 'ray@zup.com.br', 'ray', 23);
+    ```
+
+4. Para listar:
+
+    ```sql
+    SELECT * FROM `alunos`;
+    ```
+
+5. Para deletar, eu escolheria deletar pela Primary Key `id`. Dessa forma, garanto que apenas uma linha será afetada, visto que a Primary Key é única. Aqui está um exemplo:
+
+    ```sql
+    DELETE FROM `alunos` WHERE id = 1;
+    ```
+
+6. Para listar todos os alunos com email Zup, usaria o seguinte SQL:
+
+    ```sql
+    SELECT * FROM `alunos` WHERE `email` LIKE '%zup%';
+    ```
+
+    Dessa forma, encontrará qualquer valor que contiver 'zup' em qualquer posição.
+
+7. Para listagem dos alunos por idade em ordem crescente:
+
+     
+
+    ```sql
+    SELECT * FROM `alunos` ORDER BY `idade` ASC;
+    ```
+
+    Em que o `ORDER BY` irá ordenar todos os alunos por `idade` e o `ASC` indica que será em ordem crescente.
