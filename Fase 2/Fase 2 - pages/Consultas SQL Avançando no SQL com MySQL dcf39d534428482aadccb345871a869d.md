@@ -65,7 +65,7 @@ Exemplo:
  SELECT ESTADO, LIMITE_DE_CREDITO FROM tabela_de_clientes;
 ```
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled.png)
 
 O SQL acima, retorna linha por linha, ou seja, de todos os clientes e por isso repete. Mas não é esse nosso objetivo. Nosso objetivo é saber a SOMA de todos os LIMITES DE CRÉDITO de cada estado. Para isso, usamos o `GROUP BY` que irá *AGRUPAR* todos os estados em *UMA ÚNICA QUERY* . 
 
@@ -75,7 +75,7 @@ SELECT ESTADO, SUM(LIMITE_DE_CREDITO) AS LIMITE_TOTAL
 FROM tabela_de_clientes GROUP BY ESTADO;
 ```
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%201.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%201.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%201.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%201.png)
 
 Dessa forma, descobrimos o limite total de cada estado. E, olha só! O RJ tem mais limite que SP. Que mentira kkkk
 
@@ -83,7 +83,7 @@ Dessa forma, descobrimos o limite total de cada estado. E, olha só! O RJ tem ma
 
 É tipo um IF. Por exemplo:
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%202.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%202.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%202.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%202.png)
 
 ~~kkkk o cara ali~~
 
@@ -112,7 +112,7 @@ SELECT ESTADO, SUM(LIMITE_DE_CREDITO) AS SOMA_LIMITE FROM tabela_de_clientes
 GROUP BY ESTADO HAVING SUM(LIMITE_DE_CREDITO) > 900000;
 ```
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%203.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%203.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%203.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%203.png)
 
 ### CASE
 
@@ -128,7 +128,7 @@ END AS STATUS_PRECO
 FROM tabela_de_produtos;
 ```
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%204.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%204.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%204.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%204.png)
 
 ### JOIN
 
@@ -140,25 +140,25 @@ Precisam ser feitos em campos comuns entre as tabelas.
 
 Retorna apenas os que tem dados correspondentes:
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%205.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%205.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%205.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%205.png)
 
 ### LEFT JOIN
 
 Vai trazer todos da esquerda (primeira tabela citada na query SQL) e apenas os correspondentes da direita. 
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%206.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%206.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%206.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%206.png)
 
 ### RIGHT JOIN
 
 Da mesma forma do LEFT JOIN, esse traz todos da direita
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%207.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%207.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%207.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%207.png)
 
 ### FULL JOIN
 
 Traz geral kkk
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%208.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%208.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%208.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%208.png)
 
 ### UNION
 
@@ -185,7 +185,7 @@ SELECT DISTINCT BAIRRO FROM tabela_de_vendedores;
 
 Selecione (da tabela 1) tudo que tiver na tabela Y
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%209.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%209.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%209.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%209.png)
 
 ### VIEW
 
@@ -195,7 +195,7 @@ Agora podemos usar select * from view_criada e, por detrás dos panos, ele rodar
 
 Podemos juntar a view com outras tabelas, outras views e etc. Normal. 
 
-![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%2010.png](Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%2010.png)
+![Consultas%20SQL%20Avanc%CC%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%2010.png](Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d/Untitled%2010.png)
 
 ## Atividade proposta
 
