@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae207d9f-3c5c-4332-8348-bac76fe7cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Movimentacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1u7agXIHXMuQX8uK8IXrZCaCrat" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,7 +42,7 @@
       <recent name="com.rayllanderson.jpa.testes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TesteRelacionamento">
+  <component name="RunManager" selected="Application.TesteCategoria">
     <configuration name="AlteraConta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rayllanderson.jpa.testes.AlteraConta" />
       <module name="treinamento-jpa" />
@@ -80,6 +82,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TesteCategoria" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.rayllanderson.jpa.testes.TesteCategoria" />
+      <module name="treinamento-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rayllanderson.jpa.testes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TesteRelacionamento" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rayllanderson.jpa.testes.TesteRelacionamento" />
       <module name="treinamento-jpa" />
@@ -95,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TesteCategoria" />
         <item itemvalue="Application.TesteRelacionamento" />
         <item itemvalue="Application.AlteraConta" />
         <item itemvalue="Application.CriarConta" />
@@ -123,5 +139,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -3,6 +3,8 @@ package com.rayllanderson.jpa.entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Movimentacao {
@@ -19,6 +21,9 @@ public class Movimentacao {
 
     @ManyToOne
     private Conta conta;
+
+    @ManyToMany
+    private List<Categoria> categorias = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -66,5 +71,9 @@ public class Movimentacao {
 
     public void setConta(Conta conta) {
         this.conta = conta;
+    }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
     }
 }
