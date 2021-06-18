@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ae207d9f-3c5c-4332-8348-bac76fe7cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Conta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Movimentacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rayllanderson/jpa/entities/Movimentacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +38,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.rayllanderson.jpa.testes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TesteQuery">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="AlteraConta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rayllanderson.jpa.testes.AlteraConta" />
       <module name="treinamento-jpa" />
@@ -55,12 +59,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CriarConta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.rayllanderson.jpa.testes.CriarConta" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.rayllanderson.jpa.testes.atividade.Main" />
       <module name="treinamento-jpa" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.rayllanderson.jpa.testes.*" />
+          <option name="PATTERN" value="com.rayllanderson.jpa.testes.atividade.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TesteQuery" />
         <item itemvalue="Application.TesteCategoria" />
         <item itemvalue="Application.TesteRelacionamento" />
         <item itemvalue="Application.AlteraConta" />
-        <item itemvalue="Application.CriarConta" />
       </list>
     </recent_temporary>
   </component>
