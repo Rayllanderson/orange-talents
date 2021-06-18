@@ -1,5 +1,9 @@
 # Java e JPA: Persista seus objetos com a JPA2 e Hibernate
 
+### [Código fonte](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%202/treinamento-jpa)
+
+#
+
 ```
  em.getTransaction().begin();
 
