@@ -323,36 +323,3 @@ Para começar um projeto com hibernate, siga os passos:
     10. Para salvar uma correção de um aluno, precisamos que a Resposta em questão esteja salva no banco de dados. Após salvá-la ou recuperá-la, basta setá-la no objeto Correcao.
     11. Para carregar uma Correção e o aluno em questão, usaria a Query JPQL que trouxesse a correção baseada no Id do parâmetro. No entanto, dessa forma, vai trazer tudo junto da correção, desde a resposta, até a avaliação. Caso fosse um objeto maior, carregaria várias outras coisas desnecessárias.
     12. Para carregar as Respostas de um aluno baseado no Objeto Aluno, eu usaria uma Query JPQL que trouxesse uma lista de Respostas baseadas no aluno, passado como parâmetro. Atenção aqui é a mesma acima, vai trazer todos os objetos que estão relacionados com ele.
-
-    1 Criar entidade e mapear ela com as anotações adequadas, tais como @Entity, id... id gerado pelo banco. Para gerar usar @column... e na idade column definition...
-
-    ```java
-    @Column(columnDefinition = "TINYINT(100)")
-    ```
-
-    2 seguindo o mesmo padrao acima...
-
-    3 Criar classe resposta seguindo os passos padroes de mapemento, nela vai ter id, a própria reposta do aluno e um relacionamento many to one com aluno e avaliacao para manter eles linkados.
-
-    4. criaria uma classe nota com os passos de mapeamento... nela tem id, nota do tipo inteiro, uma descricao e um mapeamento one to one em respostas com colocando unique
-
-    ```java
-    @JoinColumn(unique = true)
-    @OneToOne
-    ```
-
-    5 iniciar a EntityManagerFactory com a configuração presente no persistence.xml... com a factory funcionando, iniciar o EntityManager, preencher os dados do model aluno com os campos necessários, iniciar uma transação, persistir, commitar e fechar...
-
-    6 mesmo jeito...
-
-    7 após ter instanciado avaliacao e aluno, basta instanciar o Objeto Nota passando o aluno, avaliacção e resposta como parametro. Após isso transação, salvar /buscar o aluno e avaliacao, para ficar managed e aí salvar a resposta.
-
-    8 pra salvar a correcao, a resposta precisa existir no banco de dados, resposta existente e aí setar o objeto resposta recuperado no objeto Correção, por fim, persistir...
-
-    9 cuidado é que vai carregar tudo... Precisamos tomar cuidado para não selecionar tudo desnecessariamente. Usaria o sql... 
-
-    ```java
-    String jpql = "select c.resposta.aluno.nome from Correcao c where c.id = :pId";
-    ```
-
-    ---
