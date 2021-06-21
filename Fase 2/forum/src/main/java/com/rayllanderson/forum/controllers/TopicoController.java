@@ -2,6 +2,7 @@ package com.rayllanderson.forum.controllers;
 
 import com.rayllanderson.forum.controllers.dto.TopicoDetailsDto;
 import com.rayllanderson.forum.controllers.dto.TopicoDto;
+import com.rayllanderson.forum.controllers.form.AtualizacaoTopicoForm;
 import com.rayllanderson.forum.controllers.form.TopicoForm;
 import com.rayllanderson.forum.entities.Topico;
 import com.rayllanderson.forum.exceptions.NaoEncontradoException;
@@ -9,6 +10,7 @@ import com.rayllanderson.forum.repositories.CursoRepository;
 import com.rayllanderson.forum.repositories.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -50,5 +52,13 @@ public class TopicoController {
     public ResponseEntity<TopicoDetailsDto> findById(@PathVariable Long id) {
         Topico topico = topicoRepository.findById(id).orElseThrow(() -> new NaoEncontradoException("Não encontrado"));
         return ResponseEntity.ok(new TopicoDetailsDto(topico));
+    }
+
+    @Transactional
+    @PutMapping("/{id}")
+    ResponseEntity<TopicoDto> atualizar (@PathVariable Long id, @RequestBody @Valid AtualizacaoTopicoForm form){
+        Topico topico = topicoRepository.findById(id).orElseThrow(() -> new NaoEncontradoException("Não encontrado"));
+        Topico topicoAtualizado = form.atualizar(id, topico);
+        return ResponseEntity.ok(new TopicoDto(topicoRepository.save(topicoAtualizado)));
     }
 }
