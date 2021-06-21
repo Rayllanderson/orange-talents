@@ -32,4 +32,10 @@ public class ValidationErrorHandler {
             return new ErroDeFormularioDto(erro.getField(), errorMessage);
         }).collect(Collectors.toList());
     }
+
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(NaoEncontradoException.class)
+    public String handle (NaoEncontradoException e) {
+        return e.getMessage();
+    }
 }

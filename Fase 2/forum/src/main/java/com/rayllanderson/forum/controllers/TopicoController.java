@@ -1,8 +1,10 @@
 package com.rayllanderson.forum.controllers;
 
+import com.rayllanderson.forum.controllers.dto.TopicoDetailsDto;
 import com.rayllanderson.forum.controllers.dto.TopicoDto;
 import com.rayllanderson.forum.controllers.form.TopicoForm;
 import com.rayllanderson.forum.entities.Topico;
+import com.rayllanderson.forum.exceptions.NaoEncontradoException;
 import com.rayllanderson.forum.repositories.CursoRepository;
 import com.rayllanderson.forum.repositories.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +44,11 @@ public class TopicoController {
         topico = topicoRepository.save(topico);
         URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
         return ResponseEntity.created(uri).body(TopicoDto.toTopicoDto(topico));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TopicoDetailsDto> findById(@PathVariable Long id) {
+        Topico topico = topicoRepository.findById(id).orElseThrow(() -> new NaoEncontradoException("Não encontrado"));
+        return ResponseEntity.ok(new TopicoDetailsDto(topico));
     }
 }
