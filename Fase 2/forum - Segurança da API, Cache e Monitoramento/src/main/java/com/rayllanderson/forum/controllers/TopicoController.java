@@ -9,6 +9,8 @@ import com.rayllanderson.forum.exceptions.NaoEncontradoException;
 import com.rayllanderson.forum.repositories.CursoRepository;
 import com.rayllanderson.forum.repositories.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +18,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
-import java.util.List;
 
 @RequestMapping("/topicos")
 @RestController
@@ -32,11 +33,11 @@ public class TopicoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TopicoDto>> findAll(String nomeCurso) {
+    public ResponseEntity<Page<TopicoDto>> findAll(@RequestParam(required = false) String nomeCurso, Pageable pageable) {
         if (nomeCurso == null){
-            return ResponseEntity.ok(TopicoDto.toTopicoDto(topicoRepository.findAll()));
+            return ResponseEntity.ok(TopicoDto.toTopicoDto(topicoRepository.findAll(pageable)));
         } else {
-            return ResponseEntity.ok(TopicoDto.toTopicoDto(topicoRepository.findByCursoNome(nomeCurso)));
+            return ResponseEntity.ok(TopicoDto.toTopicoDto(topicoRepository.findByCursoNome(nomeCurso, pageable)));
         }
     }
 
