@@ -1,15 +1,21 @@
 package com.rayllanderson.forum.entities;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class Resposta {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensagem;
-	private Topico topico;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
-	private Usuario autor;
 	private Boolean solucao = false;
+	@ManyToOne
+	private Topico topico;
+	@ManyToOne
+	private Usuario autor;
 
 	@Override
 	public int hashCode() {
