@@ -20,3 +20,5 @@ Nesta fase você fará uma imersão teórica sobre desenvolvimento web utilizand
 ### 4. [Consultas SQL Avançando no SQL com MySQL](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Consultas%20SQL%20Avan%C3%A7ando%20no%20SQL%20com%20MySQL%20dcf39d534428482aadccb345871a869d.md)
 
 ### 5. [Java e JPA: Persista seus objetos com a JPA2 e Hibernate](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Java%20e%20JPA%20Persista%20seus%20objetos%20com%20a%20JPA2%20e%20Hibe%207814789588524bd9bdff304179f98b01.md)
+
+### 6. [Spring Boot API REST: Construa uma API](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Spring%20Boot%20API%20REST%20Construa%20uma%20API%2089990b8d5a9b4d2e884045903952a124.md)
