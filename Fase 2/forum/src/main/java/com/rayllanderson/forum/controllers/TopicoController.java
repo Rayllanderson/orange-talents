@@ -40,6 +40,7 @@ public class TopicoController {
         }
     }
 
+    @Transactional
     @PostMapping
     public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
         Topico topico = form.toModel(cursoRepository);
@@ -60,5 +61,13 @@ public class TopicoController {
         Topico topico = topicoRepository.findById(id).orElseThrow(() -> new NaoEncontradoException("Não encontrado"));
         Topico topicoAtualizado = form.atualizar(id, topico);
         return ResponseEntity.ok(new TopicoDto(topicoRepository.save(topicoAtualizado)));
+    }
+
+    @Transactional
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> remover(@PathVariable Long id) {
+        topicoRepository.findById(id).orElseThrow(() -> new NaoEncontradoException("Não encontrado"));
+        topicoRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
