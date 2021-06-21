@@ -1,16 +1,16 @@
 package com.rayllanderson.forum.controllers;
 
 import com.rayllanderson.forum.controllers.dto.TopicoDto;
-import com.rayllanderson.forum.entities.Curso;
+import com.rayllanderson.forum.controllers.form.TopicoForm;
 import com.rayllanderson.forum.entities.Topico;
+import com.rayllanderson.forum.repositories.CursoRepository;
 import com.rayllanderson.forum.repositories.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Arrays;
+import java.net.URI;
 import java.util.List;
 
 @RequestMapping("/topicos")
@@ -18,18 +18,28 @@ import java.util.List;
 public class TopicoController {
 
     private final TopicoRepository topicoRepository;
+    private final CursoRepository cursoRepository;
 
     @Autowired
-    public TopicoController(TopicoRepository topicoRepository) {
+    public TopicoController(TopicoRepository topicoRepository, CursoRepository cursoRepository) {
         this.topicoRepository = topicoRepository;
+        this.cursoRepository = cursoRepository;
     }
 
     @GetMapping
-    public List<TopicoDto> findAll(String nomeCurso){
+    public ResponseEntity<List<TopicoDto>> findAll(String nomeCurso) {
         if (nomeCurso == null){
-            return TopicoDto.toTopicoDto(topicoRepository.findAll());
+            return ResponseEntity.ok(TopicoDto.toTopicoDto(topicoRepository.findAll()));
         } else {
-            return TopicoDto.toTopicoDto(topicoRepository.findByCursoNome(nomeCurso));
+            return ResponseEntity.ok(TopicoDto.toTopicoDto(topicoRepository.findByCursoNome(nomeCurso)));
         }
+    }
+
+    @PostMapping
+    public ResponseEntity<TopicoDto> cadastrar(@RequestBody TopicoForm form, UriComponentsBuilder uriBuilder) {
+        Topico topico = form.toModel(cursoRepository);
+        topico = topicoRepository.save(topico);
+        URI uri = uriBuilder.path("/topicos/{id}").buildAndExpand(topico.getId()).toUri();
+        return ResponseEntity.created(uri).body(TopicoDto.toTopicoDto(topico));
     }
 }
