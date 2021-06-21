@@ -7,6 +7,7 @@ import com.rayllanderson.forum.repositories.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
@@ -24,7 +25,11 @@ public class TopicoController {
     }
 
     @GetMapping
-    public List<TopicoDto> findAll(){
-        return TopicoDto.toTopicoDto(topicoRepository.findAll());
+    public List<TopicoDto> findAll(String nomeCurso){
+        if (nomeCurso == null){
+            return TopicoDto.toTopicoDto(topicoRepository.findAll());
+        } else {
+            return TopicoDto.toTopicoDto(topicoRepository.findByCursoNome(nomeCurso));
+        }
     }
 }
