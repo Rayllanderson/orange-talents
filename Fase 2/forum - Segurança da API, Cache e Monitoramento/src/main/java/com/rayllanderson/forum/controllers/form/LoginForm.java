@@ -1,5 +1,7 @@
 package com.rayllanderson.forum.controllers.form;
 
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -24,5 +26,9 @@ public class LoginForm {
 
     public String getSenha() {
         return senha;
+    }
+
+    public UsernamePasswordAuthenticationToken converter(){
+        return new UsernamePasswordAuthenticationToken(email, senha);
     }
 }
