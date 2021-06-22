@@ -1,5 +1,6 @@
 package com.rayllanderson.forum.security;
 
+import com.rayllanderson.forum.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -18,6 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final AutenticacaoService autenticacaoService;
     private final TokenService tokenService;
+    private final UsuarioRepository usuarioRepository;
 
     @Bean
     @Override
@@ -26,9 +28,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Autowired
-    public SecurityConfiguration(AutenticacaoService autenticacaoService, TokenService tokenService) {
+    public SecurityConfiguration(AutenticacaoService autenticacaoService, TokenService tokenService, UsuarioRepository usuarioRepository) {
         this.autenticacaoService = autenticacaoService;
         this.tokenService = tokenService;
+        this.usuarioRepository = usuarioRepository;
     }
 
     //Trata as configurações de Autenticação
@@ -47,7 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().addFilterBefore(new AutenticacaoFilter(tokenService), UsernamePasswordAuthenticationFilter.class);
+                .and().addFilterBefore(new AutenticacaoFilter(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class);
 
     }
 

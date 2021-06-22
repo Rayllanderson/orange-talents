@@ -1,6 +1,10 @@
 package com.rayllanderson.forum.security;
 
-import org.springframework.stereotype.Service;
+import com.rayllanderson.forum.entities.Usuario;
+import com.rayllanderson.forum.exceptions.NaoEncontradoException;
+import com.rayllanderson.forum.repositories.UsuarioRepository;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -11,18 +15,29 @@ import java.io.IOException;
 
 public class AutenticacaoFilter extends OncePerRequestFilter {
 
-    private TokenService tokenService;
+    private final TokenService tokenService;
+    private final UsuarioRepository repository;
 
-    public AutenticacaoFilter(TokenService tokenService) {
+    public AutenticacaoFilter(TokenService tokenService, UsuarioRepository repository) {
         this.tokenService = tokenService;
+        this.repository = repository;
     }
 
     @Override
     protected void doFilterInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, FilterChain filterChain) throws ServletException, IOException {
         String token = getToken(httpServletRequest);
-        boolean valido = tokenService.isTokenValid(token);
-        System.out.println(valido);
+        boolean tokenValid = tokenService.isTokenValid(token);
+        if (tokenValid){
+            autenticarCliente(token);
+        }
         filterChain.doFilter(httpServletRequest, httpServletResponse);
+    }
+
+    private void autenticarCliente(String token) {
+        Long userId = tokenService.getClientId(token);
+        Usuario usuario = repository.findById(userId).orElseThrow(() -> new NaoEncontradoException("Usuário não encontrado"));
+        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(auth);
     }
 
     private String getToken(HttpServletRequest request) {
