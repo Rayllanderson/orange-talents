@@ -1,6 +1,7 @@
 package com.rayllanderson.exercicio4;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Fatura {
@@ -26,7 +27,17 @@ public class Fatura {
     }
 
     public List<Pagamento> getPagamentos() {
-        return pagamentos;
+        //se tentar add, vai dar erro
+        return Collections.unmodifiableList(pagamentos);
+    }
+
+    public void adicionaPagamento(Pagamento pagamento){
+        this.pagamentos.add(pagamento);
+        this.pago = (valorTotalDosPagamentos() > this.valor);
+    }
+
+    private double valorTotalDosPagamentos() {
+        return pagamentos.stream().mapToDouble(Pagamento::getValor).sum();
     }
 
     public boolean isPago() {
