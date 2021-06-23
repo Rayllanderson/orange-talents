@@ -2,12 +2,18 @@ package com.rayllanderson.exercicio3;
 
 public class CalculadoraDePrecos {
 
-    public double calcula(Compra produto) {
-        TabelaDePrecoPadrao tabela = new TabelaDePrecoPadrao();
-        Frete correios = new Frete();
+    private final TabelaDePreco tabelaDePreco;
+    private final ServicoDeEntrega servicoDeEntrega;
 
-        double desconto = tabela.descontoPara(produto.getValor());
-        double frete = correios.para(produto.getCidade());
+    CalculadoraDePrecos(TabelaDePreco tabelaDePreco, ServicoDeEntrega servicoDeEntrega){
+        this.tabelaDePreco = tabelaDePreco;
+        this.servicoDeEntrega = servicoDeEntrega;
+    }
+
+    public double calcula(Compra produto) {
+
+        double desconto = tabelaDePreco.descontoPara(produto.getValor());
+        double frete = servicoDeEntrega.para(produto.getCidade());
 
         return produto.getValor() * (1-desconto) + frete;
     }

@@ -1,7 +1,8 @@
 package com.rayllanderson.exercicio3;
 
-public class Frete {
+public class Frete implements ServicoDeEntrega{
 
+    @Override
     public double para(String cidade) {
         if("SAO PAULO".equals(cidade.toUpperCase())) {
             return 15;
