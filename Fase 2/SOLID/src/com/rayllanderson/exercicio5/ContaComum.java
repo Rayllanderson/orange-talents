@@ -1,29 +1,27 @@
 package com.rayllanderson.exercicio5;
 
 public class ContaComum {
-    protected double saldo;
+
+    private ManipuladorDeSaldo manipuladorDeSaldo;
 
     public ContaComum() {
-        this.saldo = 0;
+        manipuladorDeSaldo = new ManipuladorDeSaldo();
     }
 
     public void deposita(double valor) {
-        this.saldo += valor;
+        manipuladorDeSaldo.deposita(valor);
     }
 
     public void saca(double valor) {
-        if (valor <= this.saldo) {
-            this.saldo -= valor;
-        } else {
-            throw new IllegalArgumentException();
-        }
+        double taxa = 6.0;
+        manipuladorDeSaldo.saca(valor - taxa);
     }
 
     public void rende() {
-        this.saldo += this.saldo * 0.01;
+        manipuladorDeSaldo.rende();
     }
 
     public double getSaldo() {
-        return saldo;
+        return manipuladorDeSaldo.getSaldo();
     }
 }

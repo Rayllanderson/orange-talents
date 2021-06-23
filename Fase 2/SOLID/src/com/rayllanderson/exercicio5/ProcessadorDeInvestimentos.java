@@ -20,7 +20,7 @@ public class ProcessadorDeInvestimentos {
     }
 
     private static ContaComum contaDeEstudanteCom(double amount) {
-        ContaDeEstudante c = new ContaDeEstudante();
+        ContaComum c = new ContaComum();
         c.deposita(amount);
         return c;
     }

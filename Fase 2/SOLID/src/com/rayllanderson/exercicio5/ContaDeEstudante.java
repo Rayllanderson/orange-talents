@@ -1,19 +1,27 @@
 package com.rayllanderson.exercicio5;
 
-public class ContaDeEstudante extends ContaComum{
-
+public class ContaDeEstudante {
+    ManipuladorDeSaldo manipuladorDeSaldo;
     private int milhas;
 
+    ContaDeEstudante(){
+        manipuladorDeSaldo = new ManipuladorDeSaldo();
+    }
+
     public void deposita(double valor) {
-        super.deposita(valor);
+        this.manipuladorDeSaldo.deposita(valor);
         this.milhas += (int)valor;
+    }
+
+    public void saca(double valor) {
+        manipuladorDeSaldo.saca(valor);
+    }
+
+    public double getSaldo() {
+        return manipuladorDeSaldo.getSaldo();
     }
 
     public int getMilhas() {
         return milhas;
-    }
-
-    public void rende() {
-        throw new RuntimeException("Não pode render");
     }
 }
