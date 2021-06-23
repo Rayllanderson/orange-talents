@@ -1,12 +1,11 @@
-INSERT INTO USUARIO(id, nome, email, senha) VALUES(1, 'Aluno', 'aluno@email.com', '$2a$10$WZwHkVHYKBmrQzGMssDqJOkPjkxyL66UIDaqmAWjp6nBESVl/.vNC');
-INSERT INTO USUARIO(id, nome, email, senha) VALUES(2, 'Moderador', 'moderador@email.com', '$2a$10$WZwHkVHYKBmrQzGMssDqJOkPjkxyL66UIDaqmAWjp6nBESVl/.vNC');
+INSERT INTO USUARIO(nome, email, senha) VALUES('Aluno', 'aluno@email.com', '$2a$10$WZwHkVHYKBmrQzGMssDqJOkPjkxyL66UIDaqmAWjp6nBESVl/.vNC');
+INSERT INTO USUARIO(nome, email, senha) VALUES('Moderador', 'moderador@email.com', '$2a$10$WZwHkVHYKBmrQzGMssDqJOkPjkxyL66UIDaqmAWjp6nBESVl/.vNC');
 
-INSERT INTO perfil (id, nome) VALUES (1, 'ROLE_MODERADOR');
-INSERT INTO perfil (id, nome) VALUES (2, 'ROLE_ALUNO');
+INSERT INTO perfil ( nome) VALUES ('ROLE_MODERADOR');
+INSERT INTO perfil (nome) VALUES ( 'ROLE_ALUNO');
 
-
-INSERT INTO USUARIO_PERFILS (usuario_id, perfils_id) VALUES (1, 2);
-INSERT INTO USUARIO_PERFILS (usuario_id, perfils_id) VALUES (2, 1);
+--INSERT INTO USUARIO_PERFILS (usuario_id, perfils_id) VALUES (1, 2);
+--INSERT INTO USUARIO_PERFILS (usuario_id, perfils_id) VALUES (2, 1);
 
 INSERT INTO CURSO(nome, categoria) VALUES('Spring Boot', 'Programação');
 INSERT INTO CURSO(nome, categoria) VALUES('HTML 5', 'Front-end');
