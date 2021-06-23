@@ -1,12 +1,12 @@
 package com.rayllanderson.exercicio2;
 
-public class GeradorDeNotaFiscal {
-    private final EnviadorDeEmail email;
-    private final NotaFiscalDao dao;
+import java.util.List;
 
-    public GeradorDeNotaFiscal(EnviadorDeEmail email, NotaFiscalDao dao) {
-        this.email = email;
-        this.dao = dao;
+public class GeradorDeNotaFiscal {
+    private final List<AcaoAposGerarNota> acoes;
+
+    public GeradorDeNotaFiscal(List<AcaoAposGerarNota> acoes) {
+        this.acoes = acoes;
     }
 
     public NotaFiscal gera(Fatura fatura) {
@@ -15,8 +15,7 @@ public class GeradorDeNotaFiscal {
 
         NotaFiscal nf = new NotaFiscal(valor, impostoSimplesSobreO(valor));
 
-        email.enviaEmail(nf);
-        dao.persiste(nf);
+        acoes.forEach(acao -> acao.executa(nf));
 
         return nf;
     }
