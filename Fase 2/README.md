@@ -22,3 +22,7 @@ Nesta fase você fará uma imersão teórica sobre desenvolvimento web utilizand
 ### 5. [Java e JPA: Persista seus objetos com a JPA2 e Hibernate](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Java%20e%20JPA%20Persista%20seus%20objetos%20com%20a%20JPA2%20e%20Hibe%207814789588524bd9bdff304179f98b01.md)
 
 ### 6. [Spring Boot API REST: Construa uma API](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Spring%20Boot%20API%20REST%20Construa%20uma%20API%2089990b8d5a9b4d2e884045903952a124.md)
+
+### 7. [Spring Boot API Rest: Segurança da API, Cache e Monitoramento](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Spring%20Boot%20API%20Rest%20Seguranc%CC%A7a%20da%20API%2C%20Cache%20e%20Mo%20c8f521d69a7b4d3db539b58e5cade6f0.md)
+
+### 8. [Spring Boot e Teste Profiles, Testes e Deploy](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/Fase%202%20-%20pages/Spring%20Boot%20e%20Teste%20Profiles%2C%20Testes%20e%20Deploy%209cfd2c9a7b2141e1b7132c97b66d0cfd.md)
