@@ -2,6 +2,7 @@ package br.com.alura.spring.data;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +18,7 @@ import br.com.alura.spring.data.service.RelatoriosService;
 @SpringBootApplication
 public class SpringDataApplication implements CommandLineRunner {
 
-	private Boolean system = true;
+	private Boolean isRunning = true;
 
 	private final CrudCargoService cargoService;
 
@@ -28,7 +29,8 @@ public class SpringDataApplication implements CommandLineRunner {
 	private final CrudUnidadeTrabalhoService unidadeTrabalhoService;
 
 	private final RelatorioFuncionarioDinamico relatorioFuncionarioDinamico;
-	
+
+	@Autowired
 	public SpringDataApplication(CrudCargoService cargoService, 
 			RelatoriosService relatoriosService, 
 			CrudFuncionarioService funcionarioService, 
@@ -49,7 +51,7 @@ public class SpringDataApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Scanner scanner = new Scanner(System.in);
 
-		while (system) {
+		while (isRunning) {
 			System.out.println("Qual função deseja executar?");
 			System.out.println("0 - Sair");
 			System.out.println("1 - Cargo");
@@ -79,7 +81,7 @@ public class SpringDataApplication implements CommandLineRunner {
 					break;
 				default:
 					System.out.println("Finalizando");
-					system = false;
+					isRunning = false;
 					break;
 			}
 		}
