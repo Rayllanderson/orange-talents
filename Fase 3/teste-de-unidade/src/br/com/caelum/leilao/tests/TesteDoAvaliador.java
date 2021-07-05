@@ -4,6 +4,7 @@ import br.com.caelum.leilao.dominio.Lance;
 import br.com.caelum.leilao.dominio.Leilao;
 import br.com.caelum.leilao.dominio.Usuario;
 import br.com.caelum.leilao.servico.Avaliador;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,6 +12,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TesteDoAvaliador {
+
+    private Avaliador avaliador;
+
+    @BeforeEach
+    void setup(){
+        this.avaliador = new Avaliador();
+    }
 
     @Test
     public void deveEntenderLancesEmOrdemCrescente() {
@@ -23,7 +31,6 @@ public class TesteDoAvaliador {
         leilao.propoe(new Lance(jose, 400.0));
         leilao.propoe(new Lance(maria, 500.0));
 
-        Avaliador avaliador = new Avaliador();
 
         avaliador.avalia(leilao);
 
@@ -40,8 +47,6 @@ public class TesteDoAvaliador {
 
         Leilao leilao = new Leilao("PS5");
         leilao.propoe(new Lance(joao, 1000.0));
-
-        Avaliador avaliador = new Avaliador();
 
         avaliador.avalia(leilao);
 
@@ -64,8 +69,6 @@ public class TesteDoAvaliador {
         leilao.propoe(new Lance(maria, 500.0));
         leilao.propoe(new Lance(maria, 200.0));
 
-
-        Avaliador avaliador = new Avaliador();
 
         avaliador.avalia(leilao);
         List<Lance> maiores = avaliador.get3maiores();
