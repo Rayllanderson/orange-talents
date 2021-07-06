@@ -35,3 +35,10 @@ Queremos que você entenda a estrutura do programa e como ficar melhor preparadx
 
 ## [FASE 2](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/README.md)
 Nesta fase você fará uma imersão teórica sobre desenvolvimento web utilizando o paradigma de programação orientado a objetos com Java, Spring e Hibernate.
+
+## [FASE 3](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%203)
+Agora que você passou por uma fase intensa de teoria, chegou a hora de treinar muito.
+
+Bem-vindx a fase 3 do nosso treino!
+
+Você vai construir dois projetos do zero. Nessa fase é importante que você faça uma auto análise e preste muita atenção ao nível de facilidade de cada funcionalidade que você vai construindo. Você deve sentir aos poucos que as etapas ficam mais fáceis. 
