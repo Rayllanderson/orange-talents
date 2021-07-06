@@ -33,7 +33,7 @@ Para que você se sinta e, realmente seja capaz de construir API's, você vai es
 ## [FASE 1](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%201)
 Queremos que você entenda a estrutura do programa e como ficar melhor preparadx para consumir tudo que preparamos. Essa aqui é uma fase curta, porém fundamental!
 
-## [FASE 2](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202/README.md)
+## [FASE 2](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%202)
 Nesta fase você fará uma imersão teórica sobre desenvolvimento web utilizando o paradigma de programação orientado a objetos com Java, Spring e Hibernate.
 
 ## [FASE 3](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%203)
