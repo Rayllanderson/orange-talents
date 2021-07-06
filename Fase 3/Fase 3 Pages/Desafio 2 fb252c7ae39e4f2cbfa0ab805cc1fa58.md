@@ -1,4 +1,6 @@
-# Desafio 2
+# Desafio 2 - Implementar o desafio de construção de uma API que simule parte do funcionamento do mercado livre
+
+## [Código Fonte](https://github.com/Rayllanderson/orange-talents-06-template-ecommerce)
 
 # **Cadastro de novo usuário**
 
