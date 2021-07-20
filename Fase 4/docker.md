@@ -45,3 +45,5 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
     networks:
       - propostas-network 
  ```
+ 
+ Agora é só rodar: `docker-compose up -d` pra subir e `docker-compose down` pra derrubar
