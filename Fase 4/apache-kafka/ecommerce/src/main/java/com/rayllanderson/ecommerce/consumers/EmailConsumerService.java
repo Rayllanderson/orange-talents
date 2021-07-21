@@ -1,8 +1,11 @@
 package com.rayllanderson.ecommerce.consumers;
 
+import com.rayllanderson.ecommerce.model.Email;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Map;
 
 public class EmailConsumerService {
 
@@ -10,12 +13,17 @@ public class EmailConsumerService {
 
     public static void main(String[] args) {
         String groupId = EmailConsumerService.class.getSimpleName();
-        try(var consumer = new KafkaConsumerService(groupId, "ECOMMERCE_SEND_EMAIL", EmailConsumerService::parse)) {
+        EmailConsumerService service = new EmailConsumerService();
+        try(var consumer = new KafkaConsumerService<>(groupId,
+                "ECOMMERCE_SEND_EMAIL",
+                service::parse,
+                Email.class,
+                Map.of())) {
             consumer.run();
         }
     }
 
-    private static void parse(ConsumerRecord<String, String> record){
+    private void parse(ConsumerRecord<String, Email> record){
         logger.info("-------------------------------------------");
         logger.info("Sending Email");
         logger.info("Chave {}", record.key());

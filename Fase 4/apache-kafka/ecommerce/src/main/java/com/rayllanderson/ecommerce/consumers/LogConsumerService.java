@@ -1,8 +1,13 @@
 package com.rayllanderson.ecommerce.consumers;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Map;
+import java.util.regex.Pattern;
 
 public class LogConsumerService {
 
@@ -10,7 +15,9 @@ public class LogConsumerService {
 
     public static void main(String[] args) {
         String groupId = LogConsumerService.class.getSimpleName();
-        new KafkaConsumerService(groupId, "ECOMMERCE.*", LogConsumerService::parse).run();
+        new KafkaConsumerService<>(
+                groupId, Pattern.compile("ECOMMERCE.*"), LogConsumerService::parse, String.class,
+                Map.of(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName())).run();
     }
 
     private static void parse(ConsumerRecord<String, String> record) {

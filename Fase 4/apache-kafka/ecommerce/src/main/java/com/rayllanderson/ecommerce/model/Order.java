@@ -1,4 +1,4 @@
-package com.rayllanderson.ecommerce.producers;
+package com.rayllanderson.ecommerce.model;
 
 import java.math.BigDecimal;
 
