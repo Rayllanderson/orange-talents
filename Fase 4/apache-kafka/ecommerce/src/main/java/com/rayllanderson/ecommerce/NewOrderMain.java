@@ -1,5 +1,6 @@
 package com.rayllanderson.ecommerce;
 
+import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -23,15 +24,20 @@ public class NewOrderMain {
         String value = "123131,121,150.3";
         ProducerRecord<String, String> record = new ProducerRecord<>("ECOMMERCE_NEW_ORDER", key, value);
 
+        var email = "Thank you for your order! We are processing your order!";
+        ProducerRecord<String, String> emailRecord = new ProducerRecord<>("ECOMMERCE_SEND_EMAIL", email, email);
+
         //enviando a mensagem. O get faz a gente esperar até que ela seja enviada, daí fazer isso.
         //um callback, igual then(data => {}) do JS..
-        producer.send(record, (data, exception) -> {
-            if (exception != null){
+        Callback callback = (data, exception) -> {
+            if (exception != null) {
                 logger.error("Ocorreu um erro. Causa {}", exception.getMessage());
                 return;
             }
-            logger.info("Sucesso! Tópico envido {}:::/{}/{}/{}",data.topic(), data.partition(), data.offset(), data.timestamp());
-        }).get();
+            logger.info("Sucesso! Tópico envido {}:::/{}/{}/{}", data.topic(), data.partition(), data.offset(), data.timestamp());
+        };
+        producer.send(record, callback).get();
+        producer.send(emailRecord, callback).get();
     }
 
     private static Properties properties() {

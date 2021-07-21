@@ -10,14 +10,14 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-public class FraudDetectoraService {
+public class EmailConsumerService {
 
-    private final static Logger logger = LoggerFactory.getLogger(FraudDetectoraService.class);
+    private final static Logger logger = LoggerFactory.getLogger(EmailConsumerService.class);
 
     public static void main(String[] args) {
         var consumer = new KafkaConsumer<String, String>(properties());
         //Dizendo o tópico que estou escutando
-        consumer.subscribe(Collections.singleton("ECOMMERCE_NEW_ORDER"));
+        consumer.subscribe(Collections.singleton("ECOMMERCE_SEND_EMAIL"));
 
         while(true) {
             //perguntando se tem registros em um tempo de 100 milis
@@ -27,7 +27,7 @@ public class FraudDetectoraService {
                 logger.info("Encontrei {} registros", records.count());
                 records.forEach(record -> {
                     logger.info("-------------------------------------------");
-                    logger.info("Processing new order. Checking for fraud");
+                    logger.info("Sending Email");
                     logger.info("Chave {}", record.key());
                     logger.info("Valor {}", record.value());
                     logger.info("Partição {}", record.partition());
@@ -37,7 +37,7 @@ public class FraudDetectoraService {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    logger.info("Order processed");
+                    logger.info("Email send");
                 });
             }
         }
@@ -48,7 +48,7 @@ public class FraudDetectoraService {
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
-        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, FraudDetectoraService.class.getSimpleName());
+        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, EmailConsumerService.class.getSimpleName());
         return properties;
     }
 }
