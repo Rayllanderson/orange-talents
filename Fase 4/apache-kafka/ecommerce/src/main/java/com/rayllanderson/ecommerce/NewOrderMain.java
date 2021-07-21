@@ -19,8 +19,9 @@ public class NewOrderMain {
         KafkaProducer <String, String> producer = new KafkaProducer<>(properties());
 
         //criando a mensagem
+        String key = "id,userId,price";
         String value = "123131,121,150.3";
-        ProducerRecord<String, String> record = new ProducerRecord<>("ECOMMERCE_NEW_ORDER", value, value);
+        ProducerRecord<String, String> record = new ProducerRecord<>("ECOMMERCE_NEW_ORDER", key, value);
 
         //enviando a mensagem. O get faz a gente esperar até que ela seja enviada, daí fazer isso.
         //um callback, igual then(data => {}) do JS..
