@@ -14,4 +14,5 @@ fun testaComportamentoConta() {
     contaDaMaria.transferir(contaDoJoao, 10.0)
     contaDaMaria.printarSaldo()
     contaDoJoao.printarSaldo()
+    contaDoJoao.printarDados()
 }
