@@ -18,4 +18,9 @@ class Diretor(
     fun autentica(senha: Int): Boolean {
         return this.senha == senha
     }
+
+    override fun printarDados() {
+        super.printarDados()
+        println("Plr $plr")
+    }
 }
