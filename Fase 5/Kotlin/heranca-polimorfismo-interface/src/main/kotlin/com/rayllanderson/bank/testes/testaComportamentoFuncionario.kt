@@ -1,3 +1,7 @@
+import com.rayllanderson.bank.modelo.CalculadorBonificacao
+import com.rayllanderson.bank.modelo.Diretor
+import com.rayllanderson.bank.modelo.Gerente
+
 fun testaComportamentoFuncionario() {
     val kaguya = Diretor(
         nome = "Kaguya sama",

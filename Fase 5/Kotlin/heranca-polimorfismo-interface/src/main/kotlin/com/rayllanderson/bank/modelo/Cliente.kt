@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.modelo
+
 class Cliente(
     val nome: String,
     val senha: Int

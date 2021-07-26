@@ -1,3 +1,7 @@
+import com.rayllanderson.bank.modelo.Cliente
+import com.rayllanderson.bank.modelo.Gerente
+import com.rayllanderson.bank.modelo.SistemaInterno
+
 fun testaComportamentoSistema() {
     val hayasaka = Gerente(
         "Hayasaka",

@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.modelo
+
 import kotlin.random.Random
 
 abstract class Conta(

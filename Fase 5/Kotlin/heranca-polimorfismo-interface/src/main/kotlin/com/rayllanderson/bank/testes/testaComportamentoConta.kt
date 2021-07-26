@@ -1,3 +1,5 @@
+import com.rayllanderson.bank.modelo.ContaPoupanca
+
 fun testaComportamentoConta() {
     val contaDaMaria = ContaPoupanca("Maria")
     val contaDoJoao = ContaPoupanca("Joao")

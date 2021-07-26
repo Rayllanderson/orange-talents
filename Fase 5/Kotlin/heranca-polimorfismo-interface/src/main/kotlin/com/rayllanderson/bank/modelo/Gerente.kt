@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.modelo
+
 class Gerente(
     nome: String,
     cpf: String,

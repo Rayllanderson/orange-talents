@@ -1,3 +1,6 @@
+package com.rayllanderson.bank.modelo
+
+
 class SistemaInterno {
     fun entra(usuario: Autenticavel, senha: Int) {
         val estaAutenticado = usuario.autentica(senha = senha)

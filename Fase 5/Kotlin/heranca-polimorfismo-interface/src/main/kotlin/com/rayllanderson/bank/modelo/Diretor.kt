@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.modelo
+
 class Diretor(
     nome: String,
     cpf: String,

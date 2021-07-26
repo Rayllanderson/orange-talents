@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.modelo
+
 abstract class Funcionario(
     val nome: String,
     val cpf: String,
