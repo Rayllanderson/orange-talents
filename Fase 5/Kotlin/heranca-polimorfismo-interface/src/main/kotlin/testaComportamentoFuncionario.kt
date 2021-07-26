@@ -3,7 +3,6 @@ fun testaComportamentoFuncionario() {
         nome = "Kaguya sama",
         cpf = "4666662",
         salario = 50000.0,
-        senha = 123,
         plr = 5000
     )
     val hayasaka = Gerente(
