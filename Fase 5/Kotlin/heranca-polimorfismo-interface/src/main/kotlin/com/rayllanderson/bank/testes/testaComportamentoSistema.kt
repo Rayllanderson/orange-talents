@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.testes
+
 import com.rayllanderson.bank.modelo.Cliente
 import com.rayllanderson.bank.modelo.Gerente
 import com.rayllanderson.bank.modelo.SistemaInterno

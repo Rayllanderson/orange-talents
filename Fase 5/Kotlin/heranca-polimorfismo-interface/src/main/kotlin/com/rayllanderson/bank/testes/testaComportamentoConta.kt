@@ -1,8 +1,11 @@
+package com.rayllanderson.bank.testes
+
+import com.rayllanderson.bank.modelo.Cliente
 import com.rayllanderson.bank.modelo.ContaPoupanca
 
 fun testaComportamentoConta() {
-    val contaDaMaria = ContaPoupanca("Maria")
-    val contaDoJoao = ContaPoupanca("Joao")
+    val contaDaMaria = ContaPoupanca(Cliente("Maria", 123))
+    val contaDoJoao = ContaPoupanca(Cliente("Joao", 1223))
 
     contaDaMaria.printarSaldo()
 

@@ -3,11 +3,25 @@ package com.rayllanderson.bank.modelo
 import kotlin.random.Random
 
 abstract class Conta(
-    private val titular: String
+    private val titular: Cliente
 ) {
     private val numero = Random(1000).nextInt()
 
     private var saldo = 0.0
+
+    //companion object é um objeto global. Tipo estático... wtf kkk
+    companion object {
+        var total: Int = 0
+            private set
+
+        private fun contar(){
+            this.total++
+        }
+    }
+
+    init {
+        contar()
+    }
 
     fun depositar(valor: Double) {
         this.saldo += valor
@@ -23,7 +37,7 @@ abstract class Conta(
     }
 
     fun printarDados(){
-        println("Titular $titular")
+        println("Titular ${titular.nome}")
         println("Número da conta $numero")
         println("Saldo R$ $saldo")
     }

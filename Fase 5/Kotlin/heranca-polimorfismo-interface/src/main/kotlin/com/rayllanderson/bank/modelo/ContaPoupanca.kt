@@ -1,7 +1,7 @@
 package com.rayllanderson.bank.modelo
 
 class ContaPoupanca(
-    titular: String
+    titular: Cliente
 ) : Conta(
     titular = titular
 ) {

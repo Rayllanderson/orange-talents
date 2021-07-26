@@ -1,3 +1,5 @@
+package com.rayllanderson.bank.testes
+
 import com.rayllanderson.bank.modelo.CalculadorBonificacao
 import com.rayllanderson.bank.modelo.Diretor
 import com.rayllanderson.bank.modelo.Gerente
