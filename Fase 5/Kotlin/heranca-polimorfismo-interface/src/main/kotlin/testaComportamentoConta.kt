@@ -1,6 +1,6 @@
 fun testaComportamentoConta() {
-    val contaDaMaria = Conta("Maria")
-    val contaDoJoao = Conta("Joao")
+    val contaDaMaria = ContaPoupanca("Maria")
+    val contaDoJoao = ContaPoupanca("Joao")
 
     contaDaMaria.printarSaldo()
 

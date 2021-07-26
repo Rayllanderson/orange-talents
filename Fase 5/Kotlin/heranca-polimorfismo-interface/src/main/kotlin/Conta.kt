@@ -1,6 +1,6 @@
 import kotlin.random.Random
 
-open class Conta(
+abstract class Conta(
     private val titular: String
 ) {
     private val numero = Random(1000).nextInt()
