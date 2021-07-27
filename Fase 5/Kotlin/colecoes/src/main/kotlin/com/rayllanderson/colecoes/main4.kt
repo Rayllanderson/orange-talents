@@ -10,12 +10,18 @@ fun main() {
     println("Salários com aumento ${salariosComAumento.contentToString()}")
     println("Soma de todos os salários este mês R$ ${salariosComAumento.soma()}")
     println("Soma de todos os salários nos próximos 6 meses R$ ${salariosComAumento.getGastoTotalApos(6)}")
-}
 
-fun Array<BigDecimal>.getGastoTotalApos(meses: Int): BigDecimal{
-    return this.fold(0.toBigDecimal()){somador, salario ->
-        somador + (salario * meses.toBigDecimal())
-    }
+    //pegando os 3 salarios maiores e tirando a média
+    val salariosOrdenados = salariosComAumento.sorted()
+    val tresMaioresSalarios = salariosOrdenados.takeLast(3).toTypedArray()
+    println("Os 3 maiores salários são: ${tresMaioresSalarios.contentToString()}")
+    val mediaDosTresMaioresSalarios = tresMaioresSalarios.media()
+    println("Média dos três maiores salários R$ $mediaDosTresMaioresSalarios")
+
+    //fazendo de maneira mais direta:
+    val mediaDosTresMenoresSalarios = salariosComAumento.sorted().take(3).toTypedArray().media()
+    println("Média dos três menores salários R$ $mediaDosTresMenoresSalarios")
+
 }
 
 fun bigDecimalArrayOf(vararg elementos: String): Array<BigDecimal> {
@@ -25,10 +31,4 @@ fun bigDecimalArrayOf(vararg elementos: String): Array<BigDecimal> {
 fun darAumento(salario: BigDecimal): BigDecimal{
     val aumento = "1.1".toBigDecimal()
     return if (salario < "5000.0".toBigDecimal()) salario + "500.0".toBigDecimal() else salario * aumento
-}
-
-fun Array<BigDecimal>.soma(): BigDecimal{
-    return this.reduce{acumulador, valor ->
-        acumulador + valor
-    }
 }
