@@ -3,7 +3,7 @@ package com.rayllanderson.bank.modelo
 import kotlin.random.Random
 
 abstract class Conta(
-    private val titular: Cliente
+    val titular: Cliente
 ) {
     private val numero = Random(1000).nextInt()
 
@@ -29,7 +29,7 @@ abstract class Conta(
 
     open fun sacar(valor: Double) {
         if (temSaldo(valor)) this.saldo -= valor
-        else println("Não é possível sacar. A conta não tem saldo suficiente")
+        else throw IllegalStateException("Não é possível sacar. A conta não tem saldo suficiente")
     }
 
     fun printarSaldo() {
@@ -46,7 +46,7 @@ abstract class Conta(
         if (temSaldo(valor)) {
             contaDeDestino.depositar(valor)
             this.saldo -= valor
-        } else println("Não é possível transferir. A conta não tem saldo suficiente")
+        } else throw IllegalStateException("Não é possível transferir. A conta não tem saldo suficiente")
     }
 
     private fun temSaldo(valor: Double): Boolean {
