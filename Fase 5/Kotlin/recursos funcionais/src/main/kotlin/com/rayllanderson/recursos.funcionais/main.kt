@@ -1,64 +1,43 @@
 package com.rayllanderson.recursos.funcionais
 
 fun main() {
-    testFuncaoPorFuncao()
+    Pessoa().let { }
+    "".let { }
+    1.let { }
 
-    testFuncaoPorClasse()
+    val ray = Pessoa(nome = "Ray", peso = 10.0)
+    val nomeEmMaiusculo = "${ray.nome?.toUpperCase()} pesando ${ray.peso}"
+    println(nomeEmMaiusculo)
 
-    testaFuncaoAnonima()
+    Pessoa(nome = "Ray", peso = 10.0).let { pessoa ->
+        "${pessoa.nome?.toUpperCase()} pesando ${pessoa.peso}"
+    }.let(::println)
 
-    testaFuncaoLambda()
+
+    listaQueVemDoBanco().filter { pessoa -> pessoa.idade ?:0 > 18 }.let(::imprimirMaiores18)
+    listaQueVemDoBanco().filter { pessoa -> pessoa.idade ?:99 < 18 }.let(::imprimirMenores18)
 }
 
-private fun testFuncaoPorFuncao() {
-    // sem parâmetros
-    val minhaFuncao2: () -> Unit = ::teste
-    minhaFuncao2()
-
-    // com parâmetros
-    val dizerOiPara: (String) -> String = ::dizOi
-    println(dizerOiPara("Ray"))
+fun listaQueVemDoBanco(): List<Pessoa> {
+    return listOf(
+        Pessoa(nome = "Kaguya", idade = 16),
+        Pessoa(nome = "Hayasaka", idade = 16),
+        Pessoa("João", idade = 22),
+        Pessoa("Zoro", idade = 21),
+        Pessoa("Lek nulo")
+    )
 }
 
-private fun testFuncaoPorClasse() {
-    val somador: (Int, Int) -> Int = Somador()
-    print(somador(1, 3))
+fun imprimirMaiores18(pessoas: List<Pessoa>){
+    templateImprimirPessoas("Pessoas maiores de 18 anos: ", pessoas)
 }
 
-private fun testaFuncaoAnonima() {
-    val minhaFuncaoAnonima: () -> Unit = fun() { println("Yo...") }
-    println(minhaFuncaoAnonima())
-
-    val soma: (Int, Int) -> Int = fun(a: Int, b: Int) = a + b
-    println(soma(1, 3))
+fun imprimirMenores18(pessoas: List<Pessoa>){
+    templateImprimirPessoas("Pessoas menores de 18 anos: ", pessoas)
 }
 
-private fun testaFuncaoLambda() {
-    //sem parâmetros
-    val minhaFuncaoLambda: () -> Unit = { println("Yoo... 2") }
-    println(minhaFuncaoLambda())
-
-    //com parâmetros
-    val somaLambda: (Int, Int) -> Int = { a, b -> a + b }
-    val somaLambda2 = { a: Int, b: Int -> a + b }
-    println(somaLambda(1, 3))
-
-    val maisDeUmRetorno: (Double) -> Double = resultado@{
-        if (it > 100) return@resultado it + 50
-        it + 100
-        // ou return@resultado a + 100
-     }
-
-    val acimaDeCem = maisDeUmRetorno(500.0) // 550
-    val abaixoDeCem = maisDeUmRetorno(100.00) // 200
-    println(acimaDeCem)
-    println(abaixoDeCem)
-}
-
-
-fun dizOi(nome: String): String = "Olá, $nome"
-fun teste() = println("Rom")
-
-class Somador: (Int, Int) -> Int{
-    override fun invoke(p1: Int, p2: Int) : Int = p1 + p2
+private fun templateImprimirPessoas(mensagem: String, pessoas: List<Pessoa>){
+    println(mensagem)
+    println(pessoas)
+    println("--------------------------")
 }
