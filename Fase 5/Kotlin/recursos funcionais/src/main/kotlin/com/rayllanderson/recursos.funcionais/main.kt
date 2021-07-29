@@ -9,13 +9,26 @@ fun main() {
     val nomeEmMaiusculo = "${ray.nome?.toUpperCase()} pesando ${ray.peso}"
     println(nomeEmMaiusculo)
 
+    //O LET, retorna o resultado da lambda.
+    // aqui nesse caso, retorna a String, a ultima instrução, portanto, o println vai ser o retorno ali, a string.
     Pessoa(nome = "Ray", peso = 10.0).let { pessoa ->
         "${pessoa.nome?.toUpperCase()} pesando ${pessoa.peso}"
     }.let(::println)
 
+    //o APPLY vai te retornar o próprio objeto, no nosso caso, pessoa.
+    Pessoa(nome = "Ray", peso = 10.0).apply {
+        nome = nome?.toUpperCase()
+    }.let (::println)
+
 
     listaQueVemDoBanco().filter { pessoa -> pessoa.idade ?:0 > 18 }.let(::imprimirMaiores18)
     listaQueVemDoBanco().filter { pessoa -> pessoa.idade ?:99 < 18 }.let(::imprimirMenores18)
+
+
+
+    autentica(123, autenticado = {
+        println("Você está autenticado!")
+    })
 }
 
 fun listaQueVemDoBanco(): List<Pessoa> {
@@ -40,4 +53,8 @@ private fun templateImprimirPessoas(mensagem: String, pessoas: List<Pessoa>){
     println(mensagem)
     println(pessoas)
     println("--------------------------")
+}
+
+fun autentica(senha: Int, autenticado: () -> Unit){
+    if(senha == 123) autenticado()
 }
