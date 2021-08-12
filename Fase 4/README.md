@@ -29,6 +29,11 @@ ATENÇÃO: É importante lembrar que não é esperado que você acabe essa fase 
 
 ### 9 - [Jaeger](Fase%204%207bbe5dff9c8e4a4fb1e1e5036b4e5d55/Jaeger%202f04c550c06d4f788717cf62272b8aa8.md)
 
+### 10 - [Apache Kafka](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%204/Apache%20Kafka%20e1a77d272a8f424f9a10d2e8c232e0fb.md)
+
 ## Desafios
 
 ### 1 - [Desafio 3 - Criando a Proposta](Fase%204%207bbe5dff9c8e4a4fb1e1e5036b4e5d55/Desafio%203%20-%20Criando%20a%20Proposta%204cf6891cd69940a6bd9cc75a8a326e75.md)
+
+### 2 - [Desafio 3 -Transação](https://github.com/Rayllanderson/orange-talents/blob/main/Fase%204/Desafio%204%20-%20Transac%CC%A7o%CC%83es%20ac5c94c5eb5145d79088308a009d8d71.md)
+
