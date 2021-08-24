@@ -37,8 +37,33 @@ Queremos que você entenda a estrutura do programa e como ficar melhor preparadx
 Nesta fase você fará uma imersão teórica sobre desenvolvimento web utilizando o paradigma de programação orientado a objetos com Java, Spring e Hibernate.
 
 ## [FASE 3](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%203)
-Agora que você passou por uma fase intensa de teoria, chegou a hora de treinar muito.
+Você vai construir dois projetos do zero. Nessa fase é importante que você faça uma auto análise e preste muita atenção ao nível de facilidade de cada funcionalidade que você vai construindo. Você deve sentir aos poucos que as etapas ficam mais fáceis.
 
-Bem-vindx a fase 3 do nosso treino!
+## [FASE 4](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%204)
+Vamos para o desafio final: Construir uma API que simula o funcionamento do Credicard zero, um produto do Itaú.
 
-Você vai construir dois projetos do zero. Nessa fase é importante que você faça uma auto análise e preste muita atenção ao nível de facilidade de cada funcionalidade que você vai construindo. Você deve sentir aos poucos que as etapas ficam mais fáceis. 
+## [Fase 5](https://github.com/Rayllanderson/orange-talents/tree/main/Fase%205)
+Agora vamos para a fase final!
+
+Vamos nos desafiar a transferir todo esse conhecimento para uma nova stack de tecnologias, a Orange Foundation! Antes de mais nada, vamos te contar um pouco sobre essa nova stack.
+
+A Zup + Itaú, juntas, decidiram apostar em um novo conjunto de tecnologias que são ainda mais aderentes a este mundo onde tudo se executa na Cloud. A Orange Foundation vai atuar em diversas vertentes do desenvolvimento, tais como:
+
+- Backend;
+- Frontend;
+- Pipeline de Continuos Integration(CI) e Continuos Deployment(CD);
+- Múltiplas áreas relativas a Data Science;
+
+Aqui no nosso programa, vamos focar nas tecnologias associadas com a vertente de backend. Entre essas tecnologias temos:
+
+
+- Kotlin;
+- Micronaut;
+- GRPC;
+- Gradle;
+- AWS EKS;
+- AWS Secret Manager;
+- Gitlab;
+- AWS Code Pipeline;
+- AWS Code Build;
+- AWS Code Deploy;
