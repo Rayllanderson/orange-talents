@@ -4,5 +4,5 @@ O GRPC é a tentativa de aumentar a performance na comunicação entre os servi�
 
 Links que explicam melhor
 
-- [[Guia gRPC](https://blog.lsantos.dev/guia-grpc-1/)]
-- [[gRPC: o que é e como utilizá-lo na sua próxima aplicação](https://www.zup.com.br/blog/grpc-o-que-e-beagle)]
+- [Guia gRPC](https://blog.lsantos.dev/guia-grpc-1/)
+- [gRPC: o que é e como utilizá-lo na sua próxima aplicação](https://www.zup.com.br/blog/grpc-o-que-e-beagle)
